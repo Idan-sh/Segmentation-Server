@@ -1,0 +1,326 @@
+{
+	"info": {
+		"_postman_id": "3f259d7d-fb6a-41c3-b33a-20b3823a1879",
+		"name": "Segmentation Server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26805517"
+	},
+	"item": [
+		{
+			"name": "Check status of the server",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8989/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8989",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bad endpoint",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8989/random-endpoint",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8989",
+					"path": [
+						"random-endpoint"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload one image",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "images_to_upload/ex1.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8989/perform-segmentation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8989",
+					"path": [
+						"perform-segmentation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Try uploading with invalid key",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "invalid-key",
+							"type": "file",
+							"src": "images_to_upload/ex2.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8989/perform-segmentation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8989",
+					"path": [
+						"perform-segmentation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Try uploading without images",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8989/perform-segmentation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8989",
+					"path": [
+						"perform-segmentation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Try uploading more than 1 image",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": [
+								"images_to_upload/ex3.jpg",
+								"images_to_upload/ex4.jpg"
+							]
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8989/perform-segmentation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8989",
+					"path": [
+						"perform-segmentation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Try uploading invalid format",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "images_to_upload/invalid-format.txt"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8989/perform-segmentation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8989",
+					"path": [
+						"perform-segmentation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload multiple images",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "images",
+							"type": "file",
+							"src": [
+								"images_to_upload/ex5.jpg",
+								"images_to_upload/ex6.jpg",
+								"images_to_upload/ex7.jpg",
+								"images_to_upload/ex8.jpg",
+								"images_to_upload/ex9.jpg"
+							]
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8989/perform-multi-segmentation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8989",
+					"path": [
+						"perform-multi-segmentation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Try uploading multiple images with invalid key",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "invalid-key",
+							"type": "file",
+							"src": [
+								"images_to_upload/ex3.jpg",
+								"images_to_upload/ex4.jpg",
+								"images_to_upload/ex5.jpg"
+							]
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8989/perform-multi-segmentation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8989",
+					"path": [
+						"perform-multi-segmentation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Try uploading multiple images without images",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "images",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8989/perform-multi-segmentation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8989",
+					"path": [
+						"perform-multi-segmentation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Try uploading multiple images with 1 invalid format",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "images",
+							"type": "file",
+							"src": [
+								"images_to_upload/ex5.jpg",
+								"images_to_upload/ex6.jpg",
+								"images_to_upload/invalid-format.txt"
+							]
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8989/perform-multi-segmentation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8989",
+					"path": [
+						"perform-multi-segmentation"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

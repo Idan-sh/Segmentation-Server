@@ -1,0 +1,7 @@
+Dockerfile
+.idea
+image_queue
+segmented_images
+venv
+additional_files
+__pycache__

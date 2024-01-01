@@ -12,6 +12,14 @@ The system is accessible via an HTTP endpoint and should receive images as input
 This project is a deployable web service utilizing a segmentation model (found in `model_code.ipynb`). The service provides an HTTP endpoint that receives an image as input, uses the model to perform segmentation, and returns the segmented image.
 
 > Note: The code is compatible with Python 3.8
+
+To run the segmentation server, you can clone the project, then run the included bash script `run_server.sh`.   
+Alternatively, you can use Docker using the instructions below.   
+   
+Inside the `additional_files` folder, you can find the postman collection `Segmentation Server.postman_collection.json`,
+which contains an example on how to run the service.   
+
+Furthermore, inside said folder you can find a README word document that describes in highlights my considerations, assumptions, and intentions on this specific implementation.    
 <br>
 
 
@@ -34,11 +42,3 @@ docker run --name segmentation-server -p 8989:8989 segmentation-server:1.0
 docker run --name segmentation-server -p 8989:8989 idansm/segmentation-server:1.0
 ```
 <br>
-
-
-## Deliverables
-A zip file that can be extracted and includes:
-A batch/shell files that runs the service.
-Everything you need to run your service (you can assume Python version 3.8 exists on the machine).
-A postman collection file that contains the example of how to run your service.
-A README word document that describes in highlights your considerations, assumptions and intentions when you did this specific implementation. 

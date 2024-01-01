@@ -13,13 +13,14 @@ This project is a deployable web service utilizing a segmentation model (found i
 
 > Note: The code is compatible with Python 3.8
 
-To run the segmentation server, you can clone the project, then run the included bash script `run_server.sh`.   
+To run the segmentation server, you can clone the project, and then run the included bash script `run_server.sh`.   
 Alternatively, you can use Docker using the instructions below.   
    
 Inside the `additional_files` folder, you can find the postman collection `Segmentation Server.postman_collection.json`,
 which contains an example on how to run the service.   
 
-Furthermore, inside said folder you can find a README word document that describes in highlights my considerations, assumptions, and intentions on this specific implementation.    
+Furthermore, inside said folder you can find a README Word document that describes in highlights my considerations, assumptions, and intentions on this specific implementation. 
+This document also contains more details about the project's structure, the running process of the service, and the web service's endpoints.
 <br>
 
 
